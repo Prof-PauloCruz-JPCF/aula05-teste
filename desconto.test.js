@@ -26,3 +26,11 @@ test('percentual acima de 100 lança erro', () => {
     /percentual inválido/
   );
 });
+
+test('0% de desconto mantém o preço', () => {
+  assert.strictEqual(calcularDesconto(200, 0), 200);
+});
+
+test('100% de desconto zera o preço', () => {
+  assert.strictEqual(calcularDesconto(200, 100), 0);
+});
